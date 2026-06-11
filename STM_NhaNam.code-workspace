@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "STM_NhaNam"
+		},
+		{
+			"name": "ESP32_NhaNam",
+			"path": "ESP32_NhaNam"
+		},
+		{
+			"path": "PYTHON-SIM"
+		}
+	],
+	"settings": {}
+}
