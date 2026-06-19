@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>Fuviair Dashboard</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <div id="toastBox" class="toast-box" aria-live="polite"></div>
+
+    <main id="authView" class="auth-shell">
+        <section class="auth-card">
+            <div class="brand-block">
+                <div class="brand-logo">🌱</div>
+                <div>
+                    <h1>Fuviair Dashboard</h1>
+                    <p>Quản lý khu vực, tủ điều khiển và thiết bị cảm biến Fuviair</p>
+                </div>
+            </div>
+
+            <div class="tab-row" role="tablist">
+                <button id="loginTab" class="tab-btn active" type="button">Đăng nhập</button>
+                <button id="registerTab" class="tab-btn" type="button">Đăng ký</button>
+            </div>
+
+            <form id="authForm" class="form-stack">
+                <label><span>Tên đăng nhập</span><input id="authUsername" autocomplete="username" placeholder="VD: admin" required /></label>
+                <label><span>Mật khẩu</span><input id="authPassword" autocomplete="current-password" type="password" placeholder="Nhập mật khẩu" required /></label>
+                <button id="authSubmit" class="primary-btn" type="submit">Đăng nhập</button>
+            </form>
+
+            <div id="authStatus" class="status-note muted">Sẵn sàng.</div>
+            <div id="uibuilderStatus" class="status-note warn hidden">Chưa kết nối uibuilder.</div>
+        </section>
+    </main>
+
+    <main id="appView" class="app-shell hidden">
+        <aside class="sidebar">
+            <div class="side-head">
+                <div class="brand-logo small">🌾</div>
+                <div><strong>Fuviair</strong><span id="currentUserText">--</span></div>
+            </div>
+
+            <nav class="side-nav" aria-label="Điều hướng">
+                <button class="nav-btn active" data-page="pageOverview" type="button">Tổng quan</button>
+                <button class="nav-btn" data-page="pageRooms" type="button">Khu vực / thiết bị</button>
+                <button class="nav-btn" data-page="pageControl" type="button">Điều khiển tủ</button>
+                <button class="nav-btn" data-page="pageUsage" type="button">Điện & thống kê</button>
+                <button class="nav-btn" data-page="pageDev" type="button">Kỹ thuật</button>
+            </nav>
+
+            <div class="side-footer">
+                <label class="mini-label">Mã tủ đang chọn<input id="gatewayId" value="ESP79" /></label>
+                <button id="logoutBtn" class="ghost-btn full" type="button">Đăng xuất</button>
+            </div>
+        </aside>
+
+        <section class="workspace">
+            <header class="topbar">
+                <div>
+                    <h2 id="pageTitle">Tổng quan</h2>
+                    <p id="pageSubtitle">Xem nhanh dữ liệu theo khu vực và tủ điều khiển.</p>
+                </div>
+                <div class="top-actions">
+                    <span id="socketBadge" class="badge bad">Offline</span>
+                    <button id="refreshRoomsBtn" class="outline-btn" type="button">Tải danh sách</button>
+                    <button id="getStatusBtn" class="outline-btn" type="button">Cập nhật trạng thái</button>
+                </div>
+            </header>
+
+            <section id="pageOverview" class="page active">
+                <section class="panel room-filter-panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Chọn khu vực và tủ để xem</h3>
+                            <p>Chọn khu vực và tủ để xem nhanh tình trạng vận hành.</p>
+                        </div>
+                    </div>
+                    <div class="form-grid compact select-3-col">
+                        <label><span>Danh sách khu vực</span><select id="overviewAreaSelect"></select></label>
+                        <label><span>Danh sách tủ điều khiển</span><select id="overviewControlSelect"></select></label>
+                        <label><span>Thiết bị cảm biến</span><select id="overviewSensorSelect"></select></label>
+                        <div id="overviewRoomInfo" class="selected-room-info">Chưa chọn khu vực.</div>
+                    </div>
+                </section>
+
+                <div class="grid stats-grid">
+                    <article class="stat-card"><span>Nhiệt độ</span><strong id="tempVal">--</strong><em>°C</em>
+                    </article>
+                    <article class="stat-card"><span>Độ ẩm</span><strong id="humiVal">--</strong><em>%</em></article>
+                    <article class="stat-card"><span>CO₂</span><strong id="co2Val">--</strong><em>ppm</em></article>
+                    <article class="stat-card"><span>Ánh sáng</span><strong id="lightVal">--</strong><em>lux</em>
+                    </article>
+                </div>
+
+                <div class="grid stats-grid energy-grid">
+                    <article class="stat-card power-card">
+                        <span>Điện áp</span><strong id="voltageVal">--</strong><em>V</em>
+                    </article>
+                    <article class="stat-card power-card">
+                        <span>Dòng điện</span><strong id="currentVal">--</strong><em>A</em>
+                    </article>
+                    <article class="stat-card power-card">
+                        <span>Công suất</span><strong id="powerVal">--</strong><em>W</em>
+                    </article>
+                    <article class="stat-card power-card">
+                        <span>Tần số</span><strong id="frequencyVal">--</strong><em>Hz</em>
+                    </article>
+                </div>
+
+                <div class="grid two-col">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Trạng thái tủ điều khiển</h3>
+                                <p>Chế độ chạy, ngõ ra, quạt làm mát và nhiệt độ trong tủ.</p>
+                            </div>
+                            <button id="getFullStateTopBtn" class="small-btn" type="button">Cập nhật đầy đủ</button>
+                        </div>
+                        <div class="state-lines">
+                            <div><span>Chế độ</span><strong id="modeState">--</strong></div>
+                            <div><span>Đang chạy</span><strong id="runState">--</strong></div>
+                            <div><span>Phiên bản cấu hình</span><strong id="cfgVersionState">--</strong></div>
+                            <div><span>Nhiệt độ tủ</span><strong id="cabinetTempState">--</strong></div>
+                            <div><span>Quạt làm mát tủ</span><strong id="fanState">--</strong></div>
+                            <div><span>Khẩn cấp</span><strong id="emergencyState">--</strong></div>
+                        </div>
+                        <div id="relayMiniGrid" class="relay-mini-grid"></div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Tủ và cảm biến đang chọn</h3>
+                                <p>Thông tin tủ điều khiển và các thiết bị cảm biến đang kết nối.</p>
+                            </div>
+                            <button id="syncConfigBtn" class="small-btn" type="button">Đồng bộ cấu hình</button>
+                        </div>
+                        <div class="device-summary-list">
+                            <article class="device-summary-card">
+                                <strong>Tủ điều khiển</strong>
+                                <span>Mã tủ: <b id="controlCabinetId">--</b></span>
+                                <small id="controlCabinetState">Chưa có trạng thái tủ.</small>
+                            </article>
+                            <article class="device-summary-card">
+                                <strong>Thiết bị cảm biến thuộc tủ</strong>
+                                <span>Số lượng: <b id="fuviairDeviceCount">0</b></span>
+                                <small id="fuviairDeviceList">Chưa có thiết bị cảm biến.</small>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section id="pageRooms" class="page">
+                <div class="grid two-col">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Thêm khu vực</h3>
+                                <p>Khu vực có thể là xưởng, phòng, nhà kính hoặc khu vận hành.</p>
+                            </div>
+                        </div>
+                        <form id="areaForm" class="form-grid compact">
+                            <label><span>Tên khu vực</span><input id="areaName" placeholder="VD: Xưởng A" required /></label>
+                            <label><span>Ghi chú</span><input id="areaNote" placeholder="VD: Khu trồng rau" /></label>
+                            <button class="primary-btn" type="submit">Thêm khu vực</button>
+                        </form>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Thêm tủ điều khiển</h3>
+                                <p>Nhập tên tủ và mã tủ được dán trên thiết bị để đưa vào hệ thống.</p>
+                            </div>
+                        </div>
+                        <form id="controlUnitForm" class="form-grid compact">
+                            <label><span>Chọn khu vực</span><select id="controlAreaSelect"></select></label>
+                            <label><span>Tên tủ</span><input id="controlUnitName" placeholder="VD: Tủ A01" required /></label>
+                            <label><span>Mã tủ điều khiển</span><input id="controlUnitId" placeholder="VD: TU_A01" value="ESP79" required /></label>
+                            <label><span>Khóa tủ</span><input id="controlDeviceKey" placeholder="VD: 797979" value="797979" required /></label>
+                            <button class="primary-btn" type="submit">Thêm tủ</button>
+                        </form>
+                    </section>
+
+                    <section class="panel full-width-panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Thêm thiết bị cảm biến vào tủ</h3>
+                                <p>Nhập mã thiết bị cảm biến cần theo dõi và gán thiết bị đó vào tủ đang quản lý.</p>
+                            </div>
+                        </div>
+                        <form id="sensorDeviceForm" class="form-grid compact">
+                            <label><span>Khu vực</span><select id="sensorAreaSelect"></select></label>
+                            <label><span>Tủ điều khiển</span><select id="sensorControlSelect"></select></label>
+                            <label><span>Mã thiết bị cảm biến</span><input id="sensorDeviceIdInput" placeholder="VD: SEN_A_01" required /></label>
+                            <label><span>Tên hiển thị</span><input id="sensorDeviceNameInput" placeholder="VD: Cảm biến dãy 1" /></label>
+                            <button class="primary-btn" type="submit">Gán cảm biến vào tủ</button>
+                        </form>
+                        <div class="hint-box">Sau khi gán cảm biến vào tủ, dữ liệu đo sẽ tự hiển thị khi thiết bị gửi dữ
+                            liệu về hệ thống.</div>
+                    </section>
+
+                    <section class="panel full-width-panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Danh sách khu vực, tủ và cảm biến</h3>
+                                <p>Chọn khu vực hoặc tủ cần xem, cài đặt và vận hành.</p>
+                            </div>
+                            <button id="deviceListCmdBtn" class="small-btn" type="button">Lấy danh sách cảm biến</button>
+                        </div>
+                        <div id="roomList" class="room-list empty-list">Chưa có khu vực.</div>
+                    </section>
+                </div>
+            </section>
+
+            <section id="pageControl" class="page">
+                <section class="panel room-filter-panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Chọn khu vực và tủ điều khiển</h3>
+                            <p>Các thao tác bên dưới sẽ áp dụng cho tủ đang được chọn.</p>
+                        </div>
+                    </div>
+                    <div class="form-grid compact select-3-col">
+                        <label><span>Danh sách khu vực</span><select id="controlAreaSelectMain"></select></label>
+                        <label><span>Danh sách tủ điều khiển</span><select id="controlUnitSelectMain"></select></label>
+                        <div id="controlRoomInfo" class="selected-room-info">Chưa chọn khu vực.</div>
+                    </div>
+                </section>
+
+                <div class="grid two-col">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Chế độ hoạt động</h3>
+                                <p>Chọn cách vận hành phù hợp cho tủ đang chọn.</p>
+                            </div>
+                        </div>
+                        <div class="mode-buttons">
+                            <button class="mode-btn" data-mode="MANUAL" type="button">Thủ công</button>
+                            <button class="mode-btn" data-mode="TIMER" type="button">Lịch trình</button>
+                            <button class="mode-btn" data-mode="SENSOR" type="button">Theo cảm biến</button>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Quạt làm mát tủ</h3>
+                                <p>Cài đặt quạt làm mát và ngưỡng nhiệt độ bảo vệ tủ.</p>
+                            </div>
+                        </div>
+                        <div class="form-grid compact">
+                            <label><span>Chế độ quạt</span><select id="fanModeInput"><option value="0">Tắt</option><option value="1" selected>Tự động</option><option value="2">Bật liên tục</option></select></label>
+                            <label><span>Bật khi nhiệt độ trên °C</span><input id="fanOnTempInput" type="number" value="35" step="0.1" /></label>
+                            <label><span>Tắt khi nhiệt độ dưới °C</span><input id="fanOffTempInput" type="number" value="30" step="0.1" /></label>
+                            <button id="sendFanBtn" class="primary-btn" type="button">Lưu chế độ quạt</button>
+                            <button id="sendFanThresholdBtn" class="outline-btn" type="button">Lưu ngưỡng nhiệt</button>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Điều khiển ngõ ra trực tiếp</h3>
+                            <p>Bật hoặc tắt từng ngõ ra theo nhu cầu vận hành.</p>
+                        </div><button id="allRelayOffBtn" class="small-btn danger" type="button">Tắt tất cả</button>
+                    </div>
+                    <div id="relayControlGrid" class="relay-control-grid"></div>
+                    <div id="controlRunInfo" class="hint-box">Chưa có trạng thái chạy từ tủ.</div>
+                </section>
+
+                <div class="grid two-col">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Lịch bật/tắt ngõ ra</h3>
+                                <p>Cài giờ bật và giờ tắt hằng ngày cho từng ngõ ra.</p>
+                            </div>
+                        </div>
+                        <form id="timerForm" class="form-grid compact">
+                            <label><span>Ngõ ra</span><input id="timerRelay" type="number" min="1" max="10" value="1" /></label>
+                            <label><span>Số lịch</span><input id="timerIndex" type="number" min="1" max="10" value="1" /></label>
+                            <label><span>Trạng thái lịch</span><select id="timerEnable"><option value="1">Bật</option><option value="0">Tắt</option></select></label>
+                            <label><span>Giờ bật</span><input id="timerOn" type="time" value="06:00" /></label>
+                            <label><span>Giờ tắt</span><input id="timerOff" type="time" value="18:00" /></label>
+                            <button class="primary-btn" type="submit">Lưu cài đặt</button>
+                        </form>
+                        <div id="timerAckStatus" class="save-status muted">Chưa có thao tác lưu lịch.</div>
+                        <div class="saved-config-head">
+                            <strong>Lịch đã cài đặt</strong>
+                            <button id="reloadConfigFromTimerBtn" class="small-btn" type="button">Tải lại cấu hình</button>
+                        </div>
+                        <div id="timerSavedList" class="saved-config-list empty-list">Chưa có lịch đã lưu.</div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Điều kiện tự động theo cảm biến</h3>
+                                <p>Cài điều kiện để ngõ ra tự bật hoặc tắt theo chỉ số cảm biến.</p>
+                            </div>
+                        </div>
+                        <form id="sensorRuleForm" class="form-grid compact">
+                            <label><span>Ngõ ra</span><input id="sensorRelay" type="number" min="1" max="10" value="1" /></label>
+                            <label><span>Thiết bị cảm biến</span><select id="sensorDeviceSelect"></select></label>
+                            <label><span>Chỉ số theo dõi</span><select id="sensorField"><option value="temperature">Nhiệt độ</option><option value="humidity">Độ ẩm</option><option value="co2">CO₂</option><option value="light">Ánh sáng</option><option value="voltage">Điện áp</option><option value="current">Dòng điện</option><option value="power">Công suất</option></select></label>
+                            <label><span>Cách hoạt động</span><select id="sensorLogic"><option value="ABOVE">Bật khi chỉ số cao hơn ngưỡng</option><option value="BELOW">Bật khi chỉ số thấp hơn ngưỡng</option></select></label>
+                            <label><span>Ngưỡng bật</span><input id="sensorOnValue" type="number" value="30" step="0.1" /></label>
+                            <label><span>Ngưỡng tắt</span><input id="sensorOffValue" type="number" value="25" step="0.1" /></label>
+                            <label><span>Trạng thái điều kiện</span><select id="sensorEnable"><option value="1">Bật</option><option value="0">Tắt</option></select></label>
+                            <button class="primary-btn" type="submit">Lưu cài đặt</button>
+                        </form>
+                        <div id="sensorAckStatus" class="save-status muted">Chưa có thao tác lưu điều kiện.</div>
+                        <div class="saved-config-head">
+                            <strong>Điều kiện đã cài đặt</strong>
+                            <button id="reloadConfigFromSensorBtn" class="small-btn" type="button">Tải lại cấu hình</button>
+                        </div>
+                        <div id="sensorRuleSavedList" class="saved-config-list empty-list">Chưa có điều kiện đã lưu.
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <section id="pageUsage" class="page">
+                <section class="panel">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Điện năng & thống kê sử dụng</h3>
+                            <p>Xem tổng điện năng và giá trị cảm biến theo ngày, tháng, năm.</p>
+                        </div>
+                    </div>
+                    <form id="usageForm" class="history-form usage-form">
+                        <label><span>Thiết bị cảm biến</span><select id="usageDeviceSelect"></select></label>
+                        <label><span>Hạng mục</span><select id="usageMetric"><option value="energy_kwh">Tổng điện năng kWh</option><option value="power">Công suất W</option><option value="voltage">Điện áp V</option><option value="current">Dòng điện A</option><option value="frequency">Tần số Hz</option><option value="temperature">Nhiệt độ °C</option><option value="humidity">Độ ẩm %</option><option value="co2">CO₂ ppm</option><option value="light">Ánh sáng lux</option></select></label>
+                        <label><span>Kiểu xem</span><select id="usagePeriod"><option value="day">Theo ngày</option><option value="month">Theo tháng</option><option value="year">Theo năm</option></select></label>
+                        <label id="usageDateWrap"><span>Chọn ngày</span><input id="usageDate" type="date" /></label>
+                        <label id="usageMonthWrap" class="hidden"><span>Chọn tháng</span><input id="usageMonth" type="month" /></label>
+                        <label id="usageYearWrap" class="hidden"><span>Chọn năm</span><input id="usageYear" type="number" min="2020" max="2099" step="1" /></label>
+                        <label><span>Chu kỳ tính mẫu giây</span><input id="usageSampleSec" type="number" min="1" max="3600" value="60" /></label>
+                        <label><span>Bỏ qua khoảng mất dữ liệu trên giây</span><input id="usageMaxGapSec" type="number" min="10" max="86400" value="900" /></label>
+                        <button class="primary-btn" type="submit">Xem thống kê</button>
+                    </form>
+                    <div class="grid usage-summary-grid">
+                        <article class="mini-stat"><span>Tổng</span><strong id="usageTotal">--</strong></article>
+                        <article class="mini-stat"><span>Trung bình</span><strong id="usageAvg">--</strong></article>
+                        <article class="mini-stat"><span>Min</span><strong id="usageMin">--</strong></article>
+                        <article class="mini-stat"><span>Max</span><strong id="usageMax">--</strong></article>
+                        <article class="mini-stat"><span>Số mẫu</span><strong id="usageCount">--</strong></article>
+                    </div>
+                    <canvas id="usageCanvas" height="260"></canvas>
+                    <div id="usageTable" class="history-table"></div>
+                    <p class="muted usage-note">Ghi chú: tổng điện năng được tính từ công suất đo được theo thời gian.
+                        Khi mất dữ liệu quá lâu, hệ thống bỏ qua khoảng trống đó để hạn chế cộng sai.</p>
+                </section>
+            </section>
+
+            <section id="pageDev" class="page">
+                <section id="devLoginPanel" class="panel dev-login-card">
+                    <div class="panel-head">
+                        <div>
+                            <h3>Nhật ký kỹ thuật</h3>
+                            <p>Lệnh hệ thống, lịch sử và log được gộp trong khu vực này. Chỉ kỹ thuật viên Fuvitech được
+                                sử dụng.</p>
+                        </div>
+                    </div>
+                    <form id="devLoginForm" class="form-grid compact">
+                        <label><span>Tài khoản kỹ thuật</span><input id="devUsername" placeholder="dev_fuvitech" autocomplete="off" /></label>
+                        <label><span>Mật khẩu</span><input id="devPassword" type="password" placeholder="Nhập mật khẩu" /></label>
+                        <button class="primary-btn" type="submit">Mở nhật ký kỹ thuật</button>
+                    </form>
+                    <div id="devLoginStatus" class="status-note muted">Vui lòng đăng nhập kỹ thuật để xem.</div>
+                </section>
+
+                <div id="devToolsContent" class="hidden dev-tools">
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Lệnh hệ thống</h3>
+                                <p>Dùng khi cần kiểm tra trạng thái tủ, lưu cấu hình hoặc đồng bộ lại dữ liệu từ hệ
+                                    thống.</p>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="outline-btn" data-quick="status_request" type="button">Cập nhật trạng thái</button><button class="outline-btn" data-quick="full_state_request" type="button">Xem đầy đủ trạng thái</button><button class="outline-btn" data-quick="save_flash_request" type="button">Lưu cấu hình vào tủ</button><button class="outline-btn" data-quick="sync_request" type="button">Đồng bộ cấu hình</button><button class="outline-btn" data-quick="device_list_cmd_request" type="button">Lấy danh sách cảm biến</button>
+                        </div>
+                        <label class="raw-block"><span>Lệnh nâng cao dạng JSON</span><textarea id="rawCmdInput" spellcheck="false">{
+  "type": "CMD",
+  "cmd": "GET_FULL_STATE",
+  "ack_req": true
+}</textarea></label>
+                        <button id="sendRawCmdBtn" class="primary-btn" type="button">Gửi lệnh nâng cao</button>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Lịch sử dữ liệu</h3>
+                                <p>Xem dữ liệu cảm biến đã lưu trong hệ thống.</p>
+                            </div>
+                        </div>
+                        <form id="historyForm" class="history-form">
+                            <label><span>Thiết bị cảm biến</span><select id="historyDeviceSelect"></select></label>
+                            <label><span>Loại dữ liệu</span><select id="historyType"><option value="temperature">Nhiệt độ</option><option value="humidity">Độ ẩm</option><option value="co2">CO₂</option><option value="light">Ánh sáng</option><option value="voltage">Điện áp</option><option value="current">Dòng điện</option><option value="frequency">Tần số</option><option value="power">Công suất</option></select></label>
+                            <label><span>Khoảng thời gian</span><select id="historyFilter"><option value="day">Hôm nay</option><option value="month">Tháng này</option><option value="year">Năm này</option></select></label>
+                            <button class="primary-btn" type="submit">Xem lịch sử</button>
+                        </form>
+                        <canvas id="historyCanvas" height="220"></canvas>
+                        <div id="historyTable" class="history-table"></div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Log hệ thống</h3>
+                                <p>Theo dõi dữ liệu gửi/nhận giữa Web UI, Node-RED, tủ điều khiển và cảm biến.</p>
+                            </div><button id="clearLogsBtn" class="small-btn" type="button">Xóa log</button>
+                        </div>
+                        <pre id="logBox" class="log-box"></pre>
+                    </section>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="../uibuilder/uibuilder.iife.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+{
+  "broker": {
+    "host": "mqtt.fuvitech.vn",
+    "port": 1883,
+    "qos": 0,
+    "retain": false
+  },
+  "ids": {
+    "area_name": "Xưởng A",
+    "control_id": "TU_A01",
+    "gateway_id": "TU_A01",
+    "stm_id": "TU_A01",
+    "device_key": "797979",
+    "sensor_devices": ["SEN_A_01", "SEN_A_02", "SEN_A_03"]
+  },
+  "gateway_status": {
+    "topic": "maydokhongkhi/TU_A01/gateway/status",
+    "payload": {
+      "type": "GATEWAY_STATUS",
+      "gateway_id": "TU_A01",
+      "control_id": "TU_A01",
+      "device_id": "TU_A01",
+      "state": "ONLINE",
+      "fw": "ESP32_GATEWAY_FUVIAIR_V10_AREA_CABINET_SENSOR",
+      "ip": "192.168.1.19",
+      "rssi": -40,
+      "device_count": 3,
+      "stm_id": "TU_A01",
+      "uptime_ms": 10000
+    }
+  },
+  "device_list_request": {
+    "topic": "maydokhongkhi/TU_A01/gateway/devices/request",
+    "payload": {
+      "type": "DEVICE_LIST_REQUEST",
+      "gateway_id": "TU_A01",
+      "control_id": "TU_A01"
+    }
+  },
+  "device_list_response": {
+    "topic": "maydokhongkhi/TU_A01/gateway/devices/response",
+    "payload": {
+      "type": "DEVICE_LIST_RESPONSE",
+      "gateway_id": "TU_A01",
+      "control_id": "TU_A01",
+      "status": "OK",
+      "count": 3,
+      "devices": [
+        {
+          "id_device": "SEN_A_01",
+          "device_id": "SEN_A_01",
+          "name": "Cảm biến 1 - Xưởng A",
+          "topic": "maydokhongkhi/SEN_A_01/data",
+          "fields": ["temperature", "humidity", "co2", "light", "voltage", "current", "frequency", "power"]
+        },
+        {
+          "id_device": "SEN_A_02",
+          "device_id": "SEN_A_02",
+          "name": "Cảm biến 2 - Xưởng A",
+          "topic": "maydokhongkhi/SEN_A_02/data",
+          "fields": ["temperature", "humidity", "co2", "light", "voltage", "current", "frequency", "power"]
+        }
+      ]
+    }
+  },
+  "sensor_data": {
+    "topic": "maydokhongkhi/SEN_A_01/data",
+    "payload": {
+      "type": "SENSOR_DATA",
+      "id_device": "SEN_A_01",
+      "device_id": "SEN_A_01",
+      "temperature": 35,
+      "humidity": 68,
+      "co2": 540,
+      "light": 760,
+      "voltage": 220,
+      "current": 1.2,
+      "frequency": 50,
+      "power": 264
+    }
+  },
+  "set_mode_sensor": {
+    "topic": "maydokhongkhi/TU_A01/stm32/cmd",
+    "payload": {
+      "msg_id": "set_mode_sensor_001",
+      "type": "CMD",
+      "cmd": "SET_MODE",
+      "gateway_id": "TU_A01",
+      "control_id": "TU_A01",
+      "ack_req": true,
+      "mode": "SENSOR",
+      "data": { "mode": "SENSOR" }
+    }
+  },
+  "sensor_rule_temperature": {
+    "topic": "maydokhongkhi/TU_A01/stm32/cmd",
+    "payload": {
+      "msg_id": "rule_sen_a_01_k1_temp",
+      "type": "CMD",
+      "cmd": "SET_SENSOR_RULE",
+      "gateway_id": "TU_A01",
+      "control_id": "TU_A01",
+      "ack_req": true,
+      "relay": 1,
+      "enable": 1,
+      "id_device": "SEN_A_01",
+      "field": "temperature",
+      "logic": "ABOVE",
+      "onAbove": 30,
+      "offBelow": 25,
+      "data": {
+        "relay": 1,
+        "enable": 1,
+        "id_device": "SEN_A_01",
+        "field": "temperature",
+        "logic": "ABOVE",
+        "onAbove": 30,
+        "offBelow": 25
+      }
+    }
+  },
+  "config_sync_response": {
+    "topic": "maydokhongkhi/TU_A01/stm32/config/sync/response",
+    "payload": {
+      "type": "CONFIG_SYNC_RESPONSE",
+      "gateway_id": "TU_A01",
+      "control_id": "TU_A01",
+      "status": "OK",
+      "cfgVersion": 2,
+      "mode": "SENSOR",
+      "sensor_rules": [],
+      "timer_rules": []
+    }
+  },
+  "relay_state_on": {
+    "topic": "maydokhongkhi/TU_A01/stm32/relay/state",
+    "payload": {
+      "type": "RELAY_STATE",
+      "stm_id": "TU_A01",
+      "gateway_id": "TU_A01",
+      "control_id": "TU_A01",
+      "mode": "SENSOR",
+      "relay": 1,
+      "state": 1,
+      "reason": "SENSOR_RULE",
+      "id_device": "SEN_A_01",
+      "field": "temperature",
+      "value": 35
+    }
+  }
+}

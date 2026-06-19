@@ -1,0 +1,1453 @@
+[
+    {
+        "id": "37be37840d72424c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3f1f1e0715339031",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt.fuvitech.vn",
+        "port": "2883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1b6952dd1815f081",
+        "type": "ui_group",
+        "name": "MucNuoc",
+        "tab": "",
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "abd6fbaca64cab78",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "eb6cd0f241cbd084",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "bf0784f29533fb9f",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "abd6fbaca64cab78",
+        "order": 1,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "25b61e4afab2b8f3",
+        "type": "ui_group",
+        "name": "Display",
+        "tab": "abd6fbaca64cab78",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ce3a4f037ba35629",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt.fuvitech.vn",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "93a502937d7fbf8c",
+        "type": "ui_group",
+        "name": "Đăng nhập vào tài khoản của bạn",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "mqtt_config",
+        "type": "mqtt-broker",
+        "name": "Local Broker",
+        "broker": "mqtt.fuvitech.vn",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "mysql_config",
+        "type": "MySQLdatabase",
+        "name": "Nong Trai DB",
+        "host": "sql12.freesqldatabase.com",
+        "port": "3306",
+        "db": "sql12830509",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "bb434d0c213b1f67",
+        "type": "uibuilder",
+        "z": "37be37840d72424c",
+        "name": "Nong Trai Dashboard",
+        "topic": "",
+        "url": "mai-gia-ui-test",
+        "okToGo": true,
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "blank",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "7.5.0",
+        "showMsgUib": false,
+        "title": "",
+        "descr": "",
+        "editurl": "vscode://vscode-remote/ssh-remote+103.170.122.24/data/uibuilder/Farm/?windowId=_blank",
+        "x": 530,
+        "y": 580,
+        "wires": [
+            [
+                "49995d508cd2a2ea"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "49995d508cd2a2ea",
+        "type": "switch",
+        "z": "37be37840d72424c",
+        "name": "Lọc Request",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "login_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "register_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "room_list_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "room_create_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "room_delete_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "history_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "usage_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stm32_cmd_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "mode_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "relay_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "timer_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sensor_rule_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fan_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fan_threshold_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "status_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "full_state_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "save_flash_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sync_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "device_list_cmd_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "room_device_add_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "room_devices_list_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "area_create_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "area_tree_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "control_unit_create_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sensor_device_add_request",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sensor_devices_list_request",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 26,
+        "x": 830,
+        "y": 840,
+        "wires": [
+            [
+                "a74e5bbca98dce80"
+            ],
+            [
+                "c4dda271101b1b62"
+            ],
+            [
+                "edfd15efe685fa80"
+            ],
+            [
+                "3e35cf04a8936c02"
+            ],
+            [
+                "efa0924c884c2523"
+            ],
+            [
+                "5db26fd84f87a7fa"
+            ],
+            [
+                "d0372df6a1abf910"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "737f042ca0d88739"
+            ],
+            [
+                "65943b2cddb0375c"
+            ],
+            [
+                "6b3d319d2f1ddcb2"
+            ],
+            [
+                "9aed0fb966c626fd"
+            ],
+            [
+                "edfd15efe685fa80"
+            ],
+            [
+                "3e35cf04a8936c02"
+            ],
+            [
+                "65943b2cddb0375c"
+            ],
+            [
+                "6b3d319d2f1ddcb2"
+            ]
+        ]
+    },
+    {
+        "id": "a74e5bbca98dce80",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Tạo SQL Đăng nhập",
+        "func": "let username = msg.payload.username;\nlet password = msg.payload.password;\nmsg.socketId = msg._socketId;\nmsg.reqType = 'login';\nmsg.topic = `SELECT username FROM users WHERE username='${username}' AND password='${password}'`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 720,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ]
+        ]
+    },
+    {
+        "id": "c4dda271101b1b62",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Tạo SQL Đăng ký",
+        "func": "let username = msg.payload.username;\nlet password = msg.payload.password;\nmsg.socketId = msg._socketId;\nmsg.reqType = 'register';\nmsg.reqUser = username;\nmsg.topic = `INSERT INTO users (username, password) VALUES ('${username}', '${password}')`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 800,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ]
+        ]
+    },
+    {
+        "id": "edfd15efe685fa80",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL danh sách khu vực / tủ",
+        "func": "const p = msg.payload || {};\nfunction esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nconst username = String(p.username || '').trim();\nmsg.socketId = msg._socketId;\nmsg.reqType = 'room_list';\nmsg.topic = `SELECT a.id AS area_id, a.username, a.area_name, a.note, a.created_at AS area_created_at, cu.id AS control_unit_pk, cu.control_id, cu.control_id AS gateway_id, cu.control_name, cu.device_key, cu.created_at AS control_created_at FROM areas a LEFT JOIN control_units cu ON cu.area_id=a.id WHERE a.username='${esc(username)}' ORDER BY a.created_at ASC, cu.created_at ASC`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 880,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ]
+        ]
+    },
+    {
+        "id": "3e35cf04a8936c02",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Xác thực tủ điều khiển",
+        "func": "const p = msg.payload || {};\nconst areaId = parseInt(p.area_id || p.khu_vuc_id, 10);\nconst controlId = String(p.control_id || p.ma_tu || p.gateway_id || p.gatewayId || p.gateway_device_id || p.device_id || '').trim();\nconst controlName = String(p.control_name || p.ten_tu || p.room_name || controlId).trim();\nconst stmId = controlId; // ESP32 cầu và STM32 dùng chung mã tủ trên hệ thống\nconst deviceKey = String(p.device_key || p.gateway_device_key || p.control_key || '').trim();\n\nif (!areaId || !controlId || !deviceKey) {\n    return [null, { _socketId: msg._socketId, topic: 'control_unit_create_response', payload: { status: 'error', message: 'Thiếu khu vực, mã tủ điều khiển hoặc khóa tủ.' } }];\n}\n\nconst pending = {\n    username: p.username,\n    area_id: areaId,\n    control_id: controlId,\n    control_name: controlName,\n    gateway_id: controlId,\n    gateway_device_id: controlId,\n    stm_id: stmId,\n    device_key: deviceKey,\n    socketId: msg._socketId\n};\nflow.set('control_unit_' + controlId, pending);\nflow.set('room_' + controlId, pending); // giữ tương thích luồng cũ\n\nmsg.payload = {\n    username: p.username,\n    device_id: controlId,\n    id_device: controlId,\n    control_id: controlId,\n    gateway_id: controlId,\n    stm_id: stmId,\n    device_key: deviceKey\n};\nmsg.topic = 'nong_trai/auth/request';\n\nconst timeoutMsg = { device_id: controlId, control_id: controlId, socketId: msg._socketId };\nreturn [msg, timeoutMsg];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 960,
+        "wires": [
+            [
+                "8fcad91de02cb2ba"
+            ],
+            [
+                "b081a13821cae8f8"
+            ]
+        ]
+    },
+    {
+        "id": "efa0924c884c2523",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Tạo SQL Xóa Room",
+        "func": "let id = msg.payload.id;\nlet username = msg.payload.username;\nmsg.socketId = msg._socketId;\nmsg.reqType = 'room_delete';\nmsg.topic = `DELETE FROM rooms WHERE id=${id} AND username='${username}'`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1040,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ]
+        ]
+    },
+    {
+        "id": "8fcad91de02cb2ba",
+        "type": "mqtt out",
+        "z": "37be37840d72424c",
+        "name": "Gửi ESP",
+        "topic": "nong_trai/auth/request",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_config",
+        "x": 1320,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "b081a13821cae8f8",
+        "type": "trigger",
+        "z": "37be37840d72424c",
+        "name": "Đợi 30s",
+        "op1": "",
+        "op2": "timeout",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "30",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1320,
+        "y": 1000,
+        "wires": [
+            [
+                "4638a021d799f82e"
+            ]
+        ]
+    },
+    {
+        "id": "4638a021d799f82e",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Xử lý Timeout",
+        "func": "const device_id = String(msg.device_id || msg.control_id || '').trim();\nlet pending = flow.get('control_unit_' + device_id) || flow.get('room_' + device_id);\n\nif (pending) {\n    flow.set('control_unit_' + device_id, undefined);\n    flow.set('room_' + device_id, undefined);\n    return {\n        _socketId: pending.socketId,\n        topic: 'control_unit_create_response',\n        payload: { status: 'error', message: 'Hết thời gian chờ! Chưa nhận được phản hồi từ tủ điều khiển.' }\n    };\n}\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 1000,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "f422559a46ef5c8b",
+        "type": "mqtt in",
+        "z": "37be37840d72424c",
+        "name": "Nhận Phản hồi ESP",
+        "topic": "nong_trai/auth/response",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_config",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1280,
+        "y": 1080,
+        "wires": [
+            [
+                "a47d73eb779d0c04"
+            ]
+        ]
+    },
+    {
+        "id": "a47d73eb779d0c04",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Kiểm tra tủ điều khiển OK?",
+        "func": "function esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nconst p = msg.payload || {};\nconst device_id = String(p.control_id || p.gateway_id || p.device_id || p.id_device || '').trim();\nconst status = String(p.status || '').toLowerCase();\nconst pending = flow.get('control_unit_' + device_id) || flow.get('room_' + device_id);\n\nif (!pending) return null;\nflow.set('control_unit_' + device_id, undefined);\nflow.set('room_' + device_id, undefined);\n\nif (status === 'ok' || status === 'success') {\n    const newMsg = {};\n    newMsg.socketId = pending.socketId;\n    newMsg.reqType = 'control_unit_insert';\n    newMsg.topic = `INSERT INTO control_units (area_id, username, control_id, control_name, device_key, stm_id) VALUES (${parseInt(pending.area_id,10)}, '${esc(pending.username)}', '${esc(pending.control_id)}', '${esc(pending.control_name)}', '${esc(pending.device_key)}', '${esc(pending.control_id)}') ON DUPLICATE KEY UPDATE area_id=VALUES(area_id), control_name=VALUES(control_name), device_key=VALUES(device_key), stm_id=VALUES(stm_id), updated_at=CURRENT_TIMESTAMP`;\n    return [newMsg, null];\n}\n\nreturn [null, {\n    _socketId: pending.socketId,\n    topic: 'control_unit_create_response',\n    payload: { status: 'error', message: p.message || 'Mã tủ điều khiển hoặc khóa tủ không đúng.' }\n}];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1510,
+        "y": 1080,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ],
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "def79ce26cb0b9fa",
+        "type": "mysql",
+        "z": "37be37840d72424c",
+        "mydb": "mysql_config",
+        "name": "MySQL Main",
+        "x": 1320,
+        "y": 800,
+        "wires": [
+            [
+                "4af4a32398d6843b"
+            ]
+        ]
+    },
+    {
+        "id": "4af4a32398d6843b",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Xử lý phản hồi DB",
+        "func": "let outMsg = { _socketId: msg.socketId };\nlet type = msg.reqType;\n\nif (type === 'login') {\n    outMsg.topic = 'auth_response';\n    if (Array.isArray(msg.payload) && msg.payload.length > 0) {\n        outMsg.payload = { status: 'success', message: 'Đăng nhập thành công!', username: msg.payload[0].username };\n    } else {\n        outMsg.payload = { status: 'error', message: 'Sai tên đăng nhập hoặc mật khẩu.' };\n    }\n}\nelse if (type === 'register') {\n    outMsg.topic = 'auth_response';\n    if (msg.payload && msg.payload.affectedRows > 0) outMsg.payload = { status: 'success', message: 'Đăng ký thành công!', username: msg.reqUser };\n    else outMsg.payload = { status: 'error', message: 'Tên đăng nhập đã tồn tại hoặc chưa lưu được tài khoản.' };\n}\nelse if (type === 'room_list') {\n    outMsg.topic = 'room_list_response';\n    outMsg.payload = Array.isArray(msg.payload) ? msg.payload : [];\n}\nelse if (type === 'area_create') {\n    outMsg.topic = 'area_create_response';\n    outMsg.payload = { status: 'success', message: 'Đã lưu khu vực.' };\n}\nelse if (type === 'control_unit_insert' || type === 'room_insert') {\n    outMsg.topic = 'control_unit_create_response';\n    if (msg.payload && msg.payload.affectedRows > 0) outMsg.payload = { status: 'success', message: 'Đã thêm/cập nhật tủ điều khiển.' };\n    else outMsg.payload = { status: 'error', message: 'Không thêm được tủ điều khiển.' };\n}\nelse if (type === 'room_delete') {\n    outMsg.topic = 'room_delete_response';\n    outMsg.payload = { status: 'success', message: 'Đã xóa dữ liệu đã chọn.' };\n}\nelse if (type === 'sensor_device_upsert_silent') {\n    return null;\n}\nelse if (type === 'room_device_add') {\n    outMsg.topic = 'sensor_device_add_response';\n    if (msg.payload && (msg.payload.affectedRows > 0 || msg.payload.changedRows >= 0)) outMsg.payload = { status: 'success', message: 'Đã gán thiết bị cảm biến vào tủ.' };\n    else outMsg.payload = { status: 'error', message: 'Không gán được thiết bị cảm biến.' };\n}\nelse if (type === 'room_devices_list') {\n    outMsg.topic = 'room_devices_list_response';\n    outMsg.payload = Array.isArray(msg.payload) ? msg.payload : [];\n}\nelse {\n    return null;\n}\n\nreturn outMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 800,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "c58995ca028bb57b",
+        "type": "mqtt in",
+        "z": "37be37840d72424c",
+        "name": "Nhận Dữ liệu Cảm biến",
+        "topic": "nong_trai/sensors",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_config",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 1200,
+        "wires": [
+            [
+                "2176b456dfa624ea",
+                "57d78a3eccbb65a6"
+            ]
+        ]
+    },
+    {
+        "id": "57d78a3eccbb65a6",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Format cho UI",
+        "func": "msg.topic = 'sensor_data';\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1160,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "2176b456dfa624ea",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL lưu dữ liệu cảm biến",
+        "func": "const p = msg.payload || {};\n\nfunction num(v) {\n    const n = Number(v);\n    return Number.isFinite(n) ? n : 0;\n}\n\nfunction esc(s) {\n    return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\");\n}\n\nconst did = String(p.device_id || p.id_device || '').trim();\nif (!did) return null;\n\nconst t = num(p.temperature);\nconst h = num(p.humidity);\nconst c = num(p.co2);\nconst l = num(p.light);\nconst v = num(p.voltage);\nconst a = num(p.current);\nconst f = num(p.frequency);\nconst pw = num(p.power);\n\nmsg.topic = `\nINSERT INTO sensor_data\n(device_id, temperature, humidity, co2, light, voltage, current, frequency, power)\nVALUES\n('${esc(did)}', ${t}, ${h}, ${c}, ${l}, ${v}, ${a}, ${f}, ${pw})\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1240,
+        "wires": [
+            [
+                "d2a65f3a801c0d68"
+            ]
+        ]
+    },
+    {
+        "id": "d2a65f3a801c0d68",
+        "type": "mysql",
+        "z": "37be37840d72424c",
+        "mydb": "mysql_config",
+        "name": "Lưu Dữ liệu MySQL",
+        "x": 690,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5db26fd84f87a7fa",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Chuẩn bị SQL Lịch sử",
+        "func": "let t = msg.payload.type;\nlet f = msg.payload.filter;\nlet did = msg.payload.device_id || '';\nlet sql = '';\n\n// Tự động tính offset: chuyển timestamp về giờ VN (+7 UTC)\n// bù trừ timezone của MySQL server bất kể server đang ở múi giờ nào\nconst vnTs = `(timestamp + INTERVAL (7*3600 - TIME_TO_SEC(TIMEDIFF(NOW(), UTC_TIMESTAMP()))) SECOND)`;\nconst vnNow = `(UTC_TIMESTAMP() + INTERVAL 7 HOUR)`;\n\nif (f === 'day') {\n    sql = `SELECT DATE_FORMAT(${vnTs}, '%H:%i') as time_label, ${t} as value FROM sensor_data WHERE device_id = '${did}' AND DATE(${vnTs}) = DATE(${vnNow}) ORDER BY timestamp ASC`;\n} else if (f === 'month') {\n    sql = `SELECT DATE_FORMAT(${vnTs}, '%d/%m') as time_label, AVG(${t}) as value FROM sensor_data WHERE device_id = '${did}' AND MONTH(${vnTs}) = MONTH(${vnNow}) AND YEAR(${vnTs}) = YEAR(${vnNow}) GROUP BY DATE(${vnTs}) ORDER BY timestamp ASC`;\n} else if (f === 'year') {\n    sql = `SELECT DATE_FORMAT(${vnTs}, '%m/%Y') as time_label, AVG(${t}) as value FROM sensor_data WHERE device_id = '${did}' AND YEAR(${vnTs}) = YEAR(${vnNow}) GROUP BY MONTH(${vnTs}) ORDER BY timestamp ASC`;\n}\n\nmsg.topic = sql;\nmsg.socketId = msg._socketId;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1160,
+        "wires": [
+            [
+                "8a4721581c1311c8"
+            ]
+        ]
+    },
+    {
+        "id": "8a4721581c1311c8",
+        "type": "mysql",
+        "z": "37be37840d72424c",
+        "mydb": "mysql_config",
+        "name": "Truy vấn Lịch sử",
+        "x": 1280,
+        "y": 1160,
+        "wires": [
+            [
+                "3754d53772573bb2"
+            ]
+        ]
+    },
+    {
+        "id": "3754d53772573bb2",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Trả về dữ liệu Lịch sử",
+        "func": "let outMsg = {\n    _socketId: msg.socketId,\n    topic: 'history_response',\n    payload: msg.payload\n};\nreturn outMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 1160,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "5eddbe63c2fd4304",
+        "type": "catch",
+        "z": "37be37840d72424c",
+        "name": "Bắt lỗi MySQL",
+        "scope": [
+            "def79ce26cb0b9fa",
+            "d2a65f3a801c0d68",
+            "8a4721581c1311c8",
+            "1bf20c7cf404e998"
+        ],
+        "uncaught": false,
+        "x": 840,
+        "y": 1440,
+        "wires": [
+            [
+                "c9215cabb4a2e9df"
+            ]
+        ]
+    },
+    {
+        "id": "c9215cabb4a2e9df",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Xử lý lỗi MySQL",
+        "func": "node.warn('MySQL Error: ' + (msg.error && msg.error.message ? msg.error.message : JSON.stringify(msg.error)));\nif (msg.socketId) {\n    let reqType = msg.reqType || '';\n    let topic = 'auth_response';\n    if (reqType === 'area_create') topic = 'area_create_response';\n    else if (reqType === 'control_unit_insert' || reqType === 'room_insert') topic = 'control_unit_create_response';\n    else if (reqType === 'room_delete') topic = 'room_delete_response';\n    else if (reqType === 'room_list') topic = 'room_list_response';\n    else if (reqType === 'room_device_add') topic = 'sensor_device_add_response';\n    else if (reqType === 'room_devices_list') topic = 'room_devices_list_response';\n    return {\n        _socketId: msg.socketId,\n        topic: topic,\n        payload: { status: 'error', message: 'Lỗi cơ sở dữ liệu: ' + (msg.error && msg.error.message ? msg.error.message : 'không xác định') }\n    };\n}\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 1440,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "737f042ca0d88739",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Chuẩn hóa lệnh điều khiển tủ",
+        "func": "const p = msg.payload || {};\nconst reqTopic = msg.topic || '';\nconst gw = String(p.control_id || p.gateway_id || p.ma_tu || p.gatewayId || 'ESP79').trim();\n\nfunction makeId(prefix) {\n    return prefix + '_' + Date.now() + '_' + Math.floor(Math.random() * 10000);\n}\nfunction bool01(v, defVal = true) {\n    if (v === undefined || v === null || v === '') return defVal;\n    if (v === true || v === 1 || v === '1' || String(v).toLowerCase() === 'true') return true;\n    return false;\n}\nfunction intVal(v, defVal = 0) {\n    const n = parseInt(v, 10);\n    return Number.isFinite(n) ? n : defVal;\n}\nfunction floatVal(v, defVal = 0) {\n    const n = parseFloat(v);\n    return Number.isFinite(n) ? n : defVal;\n}\nfunction upper(v, defVal = '') {\n    return String(v === undefined || v === null || v === '' ? defVal : v).trim().toUpperCase();\n}\n\nlet out = {};\n\n// UI có thể gửi sẵn một lệnh đầy đủ; Node-RED chỉ bổ sung mã lệnh và yêu cầu phản hồi khi cần.\nif (reqTopic === 'stm32_cmd_request') {\n    out = Object.assign({}, p);\n    if (!out.type) out.type = 'CMD';\n    if (out.ack_req === undefined) out.ack_req = true;\n    if (!out.msg_id) out.msg_id = makeId('NR_CMD');\n}\nelse if (reqTopic === 'mode_request') {\n    const mode = upper(p.mode || p.value, 'MANUAL');\n    out = { msg_id: p.msg_id || makeId('NR_MODE'), type: 'CMD', cmd: 'SET_MODE', ack_req: bool01(p.ack_req, true), mode, data: { mode } };\n}\nelse if (reqTopic === 'relay_request') {\n    const relay = intVal(p.relay, 1);\n    const state = intVal(p.state, 0) ? 1 : 0;\n    out = { msg_id: p.msg_id || makeId('NR_RELAY'), type: 'CMD', cmd: 'SET_RELAY', ack_req: bool01(p.ack_req, true), mode: 'MANUAL', relay, state, data: { mode: 'MANUAL', relay, state } };\n}\nelse if (reqTopic === 'timer_request') {\n    const relay = intVal(p.relay, 1);\n    out = { msg_id: p.msg_id || makeId('NR_TIMER'), type: 'CMD', cmd: 'SET_TIMER', ack_req: bool01(p.ack_req, true), relay };\n    if (Array.isArray(p.schedules)) {\n        out.data = { relay, schedules: p.schedules.map((s, i) => ({ index: intVal(s.index, i + 1), enable: intVal(s.enable, 0) ? 1 : 0, on: String(s.on || '00:00'), off: String(s.off || '00:00') })) };\n    } else {\n        out.index = intVal(p.index, 1);\n        out.enable = intVal(p.enable, 0) ? 1 : 0;\n        out.on = String(p.on || p.on_time || '00:00');\n        out.off = String(p.off || p.off_time || '00:00');\n        out.data = { relay: out.relay, index: out.index, enable: out.enable, on: out.on, off: out.off };\n    }\n}\nelse if (reqTopic === 'sensor_rule_request') {\n    const relay = intVal(p.relay, 1);\n    const logic = upper(p.logic || p.op, 'ABOVE');\n    const idDevice = String(p.id_device || p.device_id || p.device || '').trim();\n    const field = String(p.field || p.metric || 'temperature').trim();\n    const enable = intVal(p.enable, 1) ? 1 : 0;\n    out = { msg_id: p.msg_id || makeId('NR_SENSOR'), type: 'CMD', cmd: 'SET_SENSOR_RULE', ack_req: bool01(p.ack_req, true), relay, enable, id_device: idDevice, field, logic: (logic === 'BELOW' || logic === '<' || logic === '<=') ? 'BELOW' : 'ABOVE' };\n    if (out.logic === 'ABOVE') {\n        const onAbove = floatVal(p.onAbove ?? p.onValue ?? p.value, 0);\n        const offBelow = floatVal(p.offBelow ?? p.offValue, onAbove - 5);\n        out.onAbove = onAbove;\n        out.offBelow = offBelow;\n        out.onValue = onAbove;\n        out.offValue = offBelow;\n        out.data = { relay, enable, id_device: idDevice, field, logic: out.logic, onAbove, offBelow, onValue: onAbove, offValue: offBelow };\n    } else {\n        const onBelow = floatVal(p.onBelow ?? p.onValue ?? p.value, 0);\n        const offAbove = floatVal(p.offAbove ?? p.offValue, onBelow + 5);\n        out.onBelow = onBelow;\n        out.offAbove = offAbove;\n        out.onValue = onBelow;\n        out.offValue = offAbove;\n        out.data = { relay, enable, id_device: idDevice, field, logic: out.logic, onBelow, offAbove, onValue: onBelow, offValue: offAbove };\n    }\n}\nelse if (reqTopic === 'fan_request') {\n    out = { msg_id: p.msg_id || makeId('NR_FAN'), type: 'CMD', cmd: 'SET_FAN', ack_req: bool01(p.ack_req, true), data: {} };\n    if (p.fan !== undefined) { out.fan = intVal(p.fan, 0) ? 1 : 0; out.data.fan = out.fan; }\n    else { out.fanMode = intVal(p.fanMode, 1); out.data.fanMode = out.fanMode; }\n}\nelse if (reqTopic === 'fan_threshold_request') {\n    const fanOnTemp = floatVal(p.fanOnTemp ?? p.fan_on ?? p.onTemp, 35);\n    const fanOffTemp = floatVal(p.fanOffTemp ?? p.fan_off ?? p.offTemp, 30);\n    out = { msg_id: p.msg_id || makeId('NR_FAN_TH'), type: 'CMD', cmd: 'SET_FAN_THRESHOLD', ack_req: bool01(p.ack_req, true), fanOnTemp, fanOffTemp, data: { fanOnTemp, fanOffTemp } };\n}\nelse if (reqTopic === 'status_request') out = { msg_id: p.msg_id || makeId('NR_STATUS'), type: 'CMD', cmd: 'GET_STATUS', ack_req: true };\nelse if (reqTopic === 'full_state_request') out = { msg_id: p.msg_id || makeId('NR_FULL'), type: 'CMD', cmd: 'GET_FULL_STATE', ack_req: true };\nelse if (reqTopic === 'save_flash_request') out = { msg_id: p.msg_id || makeId('NR_FLASH'), type: 'CMD', cmd: 'SAVE_FLASH', ack_req: true };\nelse if (reqTopic === 'sync_request') out = { msg_id: p.msg_id || makeId('NR_SYNC'), type: 'CMD', cmd: 'CONFIG_SYNC_REQUEST', ack_req: true };\nelse if (reqTopic === 'device_list_cmd_request') out = { msg_id: p.msg_id || makeId('NR_DEV'), type: 'CMD', cmd: 'GET_DEVICE_LIST', ack_req: true };\nelse return null;\n\nout.gateway_id = gw;\nout.control_id = gw;\nmsg.topic = `maydokhongkhi/${gw}/stm32/cmd`;\nmsg.payload = out;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 1320,
+        "wires": [
+            [
+                "1d1d14fb8c227342"
+            ]
+        ]
+    },
+    {
+        "id": "1d1d14fb8c227342",
+        "type": "mqtt out",
+        "z": "37be37840d72424c",
+        "name": "CMD -> ESP -> STM32",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_config",
+        "x": 1330,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "bc1801c3d4d3a811",
+        "type": "mqtt in",
+        "z": "37be37840d72424c",
+        "name": "Nhận ESP/STM32 state (mọi Gateway)",
+        "topic": "maydokhongkhi/+/stm32/#",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_config",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 1360,
+        "wires": [
+            [
+                "feb79fd688dbcb79"
+            ]
+        ]
+    },
+    {
+        "id": "feb79fd688dbcb79",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Route STM32 -> UI + ACK server",
+        "func": "const p = msg.payload || {};\nconst topic = msg.topic || '';\nconst parts = topic.split('/');\nconst gw = String(p.control_id || p.gateway_id || (parts.length >= 2 ? parts[1] : 'ESP79')).trim();\nif (!p.gateway_id) p.gateway_id = gw;\nif (!p.control_id) p.control_id = gw;\n\nlet uiTopic = 'stm32_message';\nif (topic.endsWith('/ack')) uiTopic = 'stm32_ack';\nelse if (topic.endsWith('/relay/state')) uiTopic = 'relay_state';\nelse if (topic.endsWith('/status')) uiTopic = 'stm32_status';\nelse if (topic.endsWith('/config/state')) uiTopic = 'config_state';\nelse if (topic.endsWith('/full_state')) uiTopic = 'full_state';\nelse if (topic.endsWith('/fan/state')) uiTopic = 'fan_state';\nelse if (topic.endsWith('/boot')) uiTopic = 'stm32_boot';\nelse if (topic.endsWith('/config/sync/request') || topic.endsWith('/sync/request')) uiTopic = 'sync_request_from_stm32';\n\nconst uiMsg = { topic: uiTopic, payload: p };\nlet ackMsg = null;\nconst needAck = (p.ack_req === true || p.ack_req === 1 || p.ack_req === '1' || p.ackReq === true);\nif (needAck && p.msg_id) {\n    ackMsg = { topic: `maydokhongkhi/${gw}/server/ack`, payload: { type: 'ACK', ack_for: p.msg_id, status: 'OK', message: 'Node-RED đã nhận dữ liệu từ tủ', from: 'Node-RED', gateway_id: gw, control_id: gw, timestamp_ms: Date.now() } };\n}\nlet dbMsg = null;\nif (uiTopic === 'relay_state' || uiTopic === 'config_state' || uiTopic === 'fan_state' || uiTopic === 'stm32_status' || uiTopic === 'full_state') dbMsg = { topic: 'store_stm_state', payload: p };\nlet syncMsg = null;\nif (uiTopic === 'sync_request_from_stm32' || p.type === 'CONFIG_SYNC_REQUEST') syncMsg = { topic: 'config_sync_sql', payload: p, req: { gateway_id: gw, control_id: gw, msg_id: p.msg_id || '', localCfgVersion: p.localCfgVersion || 0 } };\nreturn [uiMsg, ackMsg, dbMsg, syncMsg];\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1360,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ],
+            [
+                "06f1cc3749e4044a"
+            ],
+            [
+                "a64983bdb1552649"
+            ],
+            [
+                "55d0b2f5ce56b56e"
+            ]
+        ]
+    },
+    {
+        "id": "06f1cc3749e4044a",
+        "type": "mqtt out",
+        "z": "37be37840d72424c",
+        "name": "ACK server -> ESP",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_config",
+        "x": 720,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "078411f0b7d0c0f8",
+        "type": "mqtt in",
+        "z": "37be37840d72424c",
+        "name": "Nhận Gateway state/ack (mọi Gateway)",
+        "topic": "maydokhongkhi/+/gateway/#",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_config",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 1480,
+        "wires": [
+            [
+                "1315935b9523fe56"
+            ]
+        ]
+    },
+    {
+        "id": "1315935b9523fe56",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Route Gateway -> UI",
+        "func": "const topic = msg.topic || '';\nconst p = msg.payload || {};\nconst parts = topic.split('/');\nconst gw = p.gateway_id || (parts.length >= 2 ? parts[1] : 'ESP79');\nif (!p.gateway_id) p.gateway_id = gw;\n\nlet uiTopic = 'gateway_message';\nif (topic.endsWith('/status')) uiTopic = 'gateway_status';\nelse if (topic.endsWith('/ack')) uiTopic = 'gateway_ack';\nelse if (topic.endsWith('/devices/request')) uiTopic = 'gateway_device_request';\nelse if (topic.endsWith('/devices/response')) uiTopic = 'gateway_device_response';\nreturn { topic: uiTopic, payload: p };\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1480,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "6d9412d0a59b24ba",
+        "type": "mqtt in",
+        "z": "37be37840d72424c",
+        "name": "ESP hỏi Device List (mọi Gateway)",
+        "topic": "maydokhongkhi/+/gateway/devices/request",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_config",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1560,
+        "wires": [
+            [
+                "d70c2586782281dc"
+            ]
+        ]
+    },
+    {
+        "id": "d70c2586782281dc",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL danh sách cảm biến cho tủ",
+        "func": "const p = msg.payload || {};\nconst parts = String(msg.topic || '').split('/');\nconst controlId = String(p.control_id || p.gateway_id || (parts.length >= 2 ? parts[1] : 'ESP79')).trim();\nfunction esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nmsg.req = { msg_id: p.msg_id || '', gateway_id: controlId, control_id: controlId };\nmsg.topic = `SELECT cud.sensor_device_id AS device_id, COALESCE(sd.device_name, cud.sensor_device_id) AS device_name, cud.control_id AS gateway_id, cud.control_id AS control_id, sd.fields_json FROM control_unit_devices cud LEFT JOIN sensor_devices sd ON sd.username=cud.username AND sd.device_id=cud.sensor_device_id WHERE cud.control_id='${esc(controlId)}' ORDER BY cud.sensor_device_id ASC`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1560,
+        "wires": [
+            [
+                "e15304d0f5acbfcc"
+            ]
+        ]
+    },
+    {
+        "id": "e15304d0f5acbfcc",
+        "type": "mysql",
+        "z": "37be37840d72424c",
+        "mydb": "mysql_config",
+        "name": "DB Device List ESP",
+        "x": 680,
+        "y": 1560,
+        "wires": [
+            [
+                "225582f994e99760"
+            ]
+        ]
+    },
+    {
+        "id": "225582f994e99760",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "JSON danh sách cảm biến trả về tủ",
+        "func": "const req = msg.req || {};\nconst gw = req.control_id || req.gateway_id || 'ESP79';\nconst rows = Array.isArray(msg.payload) ? msg.payload : [];\nconst seen = {};\nconst devices = [];\n\nfor (const r of rows) {\n    const id = String(r.device_id || r.id_device || '').trim();\n    if (!id || seen[id]) continue;\n    seen[id] = true;\n    let fields = ['temperature','humidity','co2','light','voltage','current','frequency','power'];\n    try { if (r.fields_json) fields = JSON.parse(r.fields_json); } catch(e) {}\n    devices.push({\n        id: id,\n        id_device: id,\n        name: r.device_name || id,\n        topic: `maydokhongkhi/${id}/data`,\n        fields: fields\n    });\n}\n\nmsg.topic = `maydokhongkhi/${gw}/gateway/devices/response`;\nmsg.payload = {\n    msg_id: req.msg_id || ('NR_DEVRES_' + Date.now()),\n    type: 'DEVICE_LIST_RESPONSE',\n    gateway_id: gw,\n    control_id: gw,\n    status: 'OK',\n    count: devices.length,\n    devices: devices\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1560,
+        "wires": [
+            [
+                "fb3ea5a6f74cde91"
+            ]
+        ]
+    },
+    {
+        "id": "fb3ea5a6f74cde91",
+        "type": "mqtt out",
+        "z": "37be37840d72424c",
+        "name": "Device List -> ESP",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_config",
+        "x": 1150,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "d0372df6a1abf910",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Chuẩn bị SQL Thống kê sử dụng",
+        "func": "const p = msg.payload || {};\nfunction esc(s) {\n    return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\");\n}\nfunction pad2(n) { return String(n).padStart(2, '0'); }\nfunction todayYmd() {\n    const d = new Date();\n    return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;\n}\nfunction lastDay(y, m) {\n    return new Date(Number(y), Number(m), 0).getDate();\n}\nfunction error(message) {\n    return [null, {\n        _socketId: msg._socketId,\n        topic: 'usage_response',\n        payload: { status: 'error', message }\n    }];\n}\n\nconst allowedMetrics = ['energy_kwh', 'temperature', 'humidity', 'co2', 'light', 'voltage', 'current', 'frequency', 'power'];\nconst allowedPeriods = ['day', 'month', 'year'];\nconst did = String(p.device_id || p.id_device || '').trim();\nif (!did) return error('Thiếu device_id để thống kê.');\n\nconst metric = allowedMetrics.includes(p.metric) ? p.metric : 'energy_kwh';\nconst period = allowedPeriods.includes(p.period) ? p.period : 'day';\nconst sampleSec = Math.max(1, Math.min(3600, Number(p.sample_sec || p.sampleSec || 60)));\nconst maxGapSec = Math.max(10, Math.min(86400, Number(p.max_gap_sec || p.maxGapSec || 900)));\nlet date = String(p.date || '').trim();\nlet start = '', end = '';\n\nif (period === 'day') {\n    if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) date = todayYmd();\n    start = `${date} 00:00:00`;\n    end = `${date} 23:59:59`;\n} else if (period === 'month') {\n    if (!/^\\d{4}-\\d{2}$/.test(date)) date = todayYmd().slice(0, 7);\n    const [y, m] = date.split('-');\n    start = `${y}-${m}-01 00:00:00`;\n    end = `${y}-${m}-${pad2(lastDay(y, m))} 23:59:59`;\n} else {\n    if (!/^\\d{4}$/.test(date)) date = todayYmd().slice(0, 4);\n    start = `${date}-01-01 00:00:00`;\n    end = `${date}-12-31 23:59:59`;\n}\n\n// Đổi timestamp MySQL/server về giờ VN giống flow lịch sử cũ.\nconst vnTs = `(timestamp + INTERVAL (7*3600 - TIME_TO_SEC(TIMEDIFF(NOW(), UTC_TIMESTAMP()))) SECOND)`;\n\nmsg.socketId = msg._socketId;\nmsg.usageMeta = {\n    device_id: did,\n    metric,\n    period,\n    date,\n    start,\n    end,\n    sample_sec: sampleSec,\n    max_gap_sec: maxGapSec\n};\n\nmsg.topic = `SELECT DATE_FORMAT(${vnTs}, '%Y-%m-%d %H:%i:%s') AS ts_vn, temperature, humidity, co2, light, voltage, current, frequency, power FROM sensor_data WHERE device_id='${esc(did)}' AND ${vnTs} >= '${start}' AND ${vnTs} <= '${end}' ORDER BY timestamp ASC LIMIT 50000`;\nreturn [msg, null];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 1220,
+        "wires": [
+            [
+                "1bf20c7cf404e998"
+            ],
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "1bf20c7cf404e998",
+        "type": "mysql",
+        "z": "37be37840d72424c",
+        "mydb": "mysql_config",
+        "name": "Truy vấn Thống kê sử dụng",
+        "x": 1320,
+        "y": 1220,
+        "wires": [
+            [
+                "9b5b717a4fe7b5b5"
+            ]
+        ]
+    },
+    {
+        "id": "9b5b717a4fe7b5b5",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Tính điện năng & thống kê",
+        "func": "const meta = msg.usageMeta || {};\nconst rowsIn = Array.isArray(msg.payload) ? msg.payload : [];\nconst metric = meta.metric || 'energy_kwh';\nconst period = meta.period || 'day';\nconst sampleSec = Number(meta.sample_sec || 60);\nconst maxGapSec = Number(meta.max_gap_sec || 900);\nconst unitMap = {\n    energy_kwh: 'kWh', temperature: '°C', humidity: '%', co2: 'ppm', light: 'lux',\n    voltage: 'V', current: 'A', frequency: 'Hz', power: 'W'\n};\nfunction n(v) { const x = Number(v); return Number.isFinite(x) ? x : null; }\nfunction parseTs(s) {\n    const t = Date.parse(String(s || '').replace(' ', 'T') + '+07:00');\n    return Number.isFinite(t) ? t : null;\n}\nfunction bucketLabel(ts) {\n    const s = String(ts || '');\n    if (period === 'day') return s.slice(11, 13) + ':00';\n    if (period === 'month') return s.slice(8, 10) + '/' + s.slice(5, 7);\n    return s.slice(5, 7) + '/' + s.slice(0, 4);\n}\nfunction bucketSortKey(ts) {\n    const s = String(ts || '');\n    if (period === 'day') return s.slice(0, 13);\n    if (period === 'month') return s.slice(0, 10);\n    return s.slice(0, 7);\n}\nfunction ensureBucket(map, key, label) {\n    if (!map.has(key)) map.set(key, { key, time_label: label, sum: 0, count: 0, min: undefined, max: undefined });\n    return map.get(key);\n}\nfunction addValue(b, value) {\n    b.sum += value;\n    b.count += 1;\n    b.min = b.min === undefined ? value : Math.min(b.min, value);\n    b.max = b.max === undefined ? value : Math.max(b.max, value);\n}\n\nconst buckets = new Map();\nconst rawValues = [];\n\nif (metric === 'energy_kwh') {\n    for (let i = 0; i < rowsIn.length; i++) {\n        const r = rowsIn[i];\n        const pwr = n(r.power);\n        if (pwr === null) continue;\n        const t = parseTs(r.ts_vn);\n        const next = i < rowsIn.length - 1 ? parseTs(rowsIn[i + 1].ts_vn) : null;\n        let dur = next !== null && t !== null ? (next - t) / 1000 : sampleSec;\n        if (!Number.isFinite(dur) || dur <= 0) dur = sampleSec;\n        if (dur > maxGapSec) dur = 0; // tránh cộng sai khi mất gói lâu\n        const kwh = pwr * dur / 3600000;\n        const b = ensureBucket(buckets, bucketSortKey(r.ts_vn), bucketLabel(r.ts_vn));\n        addValue(b, kwh);\n        rawValues.push(kwh);\n    }\n} else {\n    for (const r of rowsIn) {\n        const val = n(r[metric]);\n        if (val === null) continue;\n        const b = ensureBucket(buckets, bucketSortKey(r.ts_vn), bucketLabel(r.ts_vn));\n        addValue(b, val);\n        rawValues.push(val);\n    }\n}\n\nconst rows = Array.from(buckets.values()).sort((a, b) => a.key.localeCompare(b.key)).map(b => {\n    const value = metric === 'energy_kwh' ? b.sum : (b.count ? b.sum / b.count : 0);\n    return { time_label: b.time_label, value, min: b.min, max: b.max, count: b.count };\n});\n\nlet summary = { unit: unitMap[metric] || '', count: rowsIn.length };\nif (metric === 'energy_kwh') {\n    const vals = rows.map(r => Number(r.value)).filter(Number.isFinite);\n    const total = vals.reduce((s, v) => s + v, 0);\n    summary.total_kwh = total;\n    summary.total = total;\n    summary.avg = vals.length ? total / vals.length : 0;\n    summary.min = vals.length ? Math.min(...vals) : 0;\n    summary.max = vals.length ? Math.max(...vals) : 0;\n} else {\n    const vals = rawValues.filter(Number.isFinite);\n    summary.avg = vals.length ? vals.reduce((s, v) => s + v, 0) / vals.length : 0;\n    summary.min = vals.length ? Math.min(...vals) : 0;\n    summary.max = vals.length ? Math.max(...vals) : 0;\n}\n\nreturn {\n    _socketId: msg.socketId,\n    topic: 'usage_response',\n    payload: {\n        type: 'USAGE_RESPONSE',\n        status: 'success',\n        device_id: meta.device_id,\n        metric,\n        period,\n        date: meta.date,\n        start: meta.start,\n        end: meta.end,\n        sample_sec: sampleSec,\n        max_gap_sec: maxGapSec,\n        unit: unitMap[metric] || '',\n        rows,\n        summary\n    }\n};\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1550,
+        "y": 1220,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "7d6983270547fca6",
+        "type": "mqtt in",
+        "z": "37be37840d72424c",
+        "name": "Nhận Sensor data maydokhongkhi/+/data",
+        "topic": "maydokhongkhi/+/data",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_config",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1640,
+        "wires": [
+            [
+                "a053e85b84c3e61f"
+            ]
+        ]
+    },
+    {
+        "id": "a053e85b84c3e61f",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "Chuẩn hóa Sensor -> UI + DB",
+        "func": "const topic = msg.topic || '';\nconst parts = topic.split('/');\nconst idFromTopic = parts.length >= 2 ? parts[1] : '';\nlet p = msg.payload || {};\nif (typeof p === 'string') {\n    try { p = JSON.parse(p); } catch (e) { p = {}; }\n}\nconst did = String(p.id_device || p.device_id || idFromTopic || '').trim();\nif (!did) return null;\np.id_device = did;\np.device_id = did;\np.type = p.type || 'SENSOR_DATA';\np.topic = topic;\np.received_at_ms = Date.now();\n\n// Output 1: UI, output 2: DB insert node.\nconst uiMsg = { topic: 'sensor_data', payload: p };\nconst dbMsg = { topic: msg.topic, payload: p };\nreturn [uiMsg, dbMsg];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1640,
+        "wires": [
+            [
+                "bb434d0c213b1f67"
+            ],
+            [
+                "2176b456dfa624ea"
+            ]
+        ]
+    },
+    {
+        "id": "65943b2cddb0375c",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL gán thiết bị cảm biến vào tủ",
+        "func": "const p = msg.payload || {};\nfunction esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nconst areaId = parseInt(p.area_id || p.khu_vuc_id, 10);\nconst controlId = String(p.control_id || p.gateway_id || p.ma_tu || '').trim();\nconst deviceId = String(p.sensor_device_id || p.device_id || p.id_device || p.ma_cam_bien || '').trim();\nconst username = String(p.username || '').trim();\n\nif (!username || !controlId || !deviceId) {\n    return [null, { _socketId: msg._socketId, topic: 'sensor_device_add_response', payload: { status: 'error', message: 'Thiếu mã tủ điều khiển hoặc mã thiết bị cảm biến.' } }];\n}\nconst fields = JSON.stringify(p.fields || ['temperature','humidity','co2','light','voltage','current','frequency','power']);\nconst sensorMsg = {\n    socketId: msg._socketId,\n    reqType: 'sensor_device_upsert_silent',\n    topic: `INSERT INTO sensor_devices (username, device_id, device_name, fields_json) VALUES ('${esc(username)}','${esc(deviceId)}','${esc(p.device_name || p.sensor_device_name || deviceId)}','${esc(fields)}') ON DUPLICATE KEY UPDATE device_name=VALUES(device_name), fields_json=VALUES(fields_json), updated_at=CURRENT_TIMESTAMP`\n};\nconst assignMsg = {\n    socketId: msg._socketId,\n    reqType: 'room_device_add',\n    topic: `INSERT INTO control_unit_devices (area_id, username, control_id, sensor_device_id) VALUES (${areaId || 'NULL'}, '${esc(username)}', '${esc(controlId)}', '${esc(deviceId)}') ON DUPLICATE KEY UPDATE area_id=VALUES(area_id), updated_at=CURRENT_TIMESTAMP`\n};\nreturn [[sensorMsg, assignMsg], null];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1240,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ],
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "6b3d319d2f1ddcb2",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL danh sách cảm biến theo tủ",
+        "func": "const p = msg.payload || {};\nfunction esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nconst username = String(p.username || '').trim();\nconst controlId = String(p.control_id || p.gateway_id || p.ma_tu || '').trim();\nmsg.socketId = msg._socketId;\nmsg.reqType = 'room_devices_list';\nlet where = `cud.username='${esc(username)}'`;\nif (controlId) where += ` AND cud.control_id='${esc(controlId)}'`;\nmsg.topic = `SELECT cud.id, cud.area_id, cud.username, cud.control_id, cud.control_id AS gateway_id, cud.sensor_device_id AS device_id, cud.sensor_device_id AS id_device, sd.device_name, sd.fields_json, cud.created_at FROM control_unit_devices cud LEFT JOIN sensor_devices sd ON sd.username=cud.username AND sd.device_id=cud.sensor_device_id WHERE ${where} ORDER BY cud.area_id ASC, cud.control_id ASC, cud.sensor_device_id ASC`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1300,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ]
+        ]
+    },
+    {
+        "id": "a64983bdb1552649",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL lưu trạng thái STM/config",
+        "func": "const p = msg.payload || {};\nfunction esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nfunction num(v, d=0) { const n = Number(v); return Number.isFinite(n) ? n : d; }\nconst gw = String(p.control_id || p.gateway_id || 'ESP79');\nconst stm = String(p.stm_id || 'STM79');\nconst type = String(p.type || '').toUpperCase();\nconst cmd = String(p.cmd || '').toUpperCase();\nconst out = [];\n\nif (type === 'RELAY_STATE' || p.relay !== undefined && p.state !== undefined && String(msg.topic).includes('relay')) {\n    const relay = num(p.relay, 0), state = num(p.state, 0) ? 1 : 0;\n    if (relay > 0) {\n        out.push({ topic: `INSERT INTO relay_states (gateway_id, stm_id, relay, state, mode, source, cfgVersion) VALUES ('${esc(gw)}','${esc(stm)}',${relay},${state},'${esc(p.mode || '')}','${esc(p.source || p.reason || '')}',${num(p.cfgVersion,0)}) ON DUPLICATE KEY UPDATE state=VALUES(state), mode=VALUES(mode), source=VALUES(source), cfgVersion=VALUES(cfgVersion), updated_at=CURRENT_TIMESTAMP` });\n        out.push({ topic: `INSERT INTO relay_logs (gateway_id, stm_id, relay, state, mode, source, reason, id_device, field, value) VALUES ('${esc(gw)}','${esc(stm)}',${relay},${state},'${esc(p.mode || '')}','${esc(p.source || '')}','${esc(p.reason || '')}','${esc(p.id_device || '')}','${esc(p.field || '')}',${p.value === undefined ? 'NULL' : num(p.value,0)})` });\n    }\n}\n\nif (type === 'CONFIG_STATE') {\n    out.push({ topic: `INSERT INTO gateway_configs (gateway_id, stm_id, cfgVersion, mode) VALUES ('${esc(gw)}','${esc(stm)}',${num(p.cfgVersion,1)},'${esc(p.mode || 'MANUAL')}') ON DUPLICATE KEY UPDATE stm_id=VALUES(stm_id), cfgVersion=GREATEST(cfgVersion, VALUES(cfgVersion)), mode=VALUES(mode), updated_at=CURRENT_TIMESTAMP` });\n    if (cmd === 'SET_SENSOR_RULE') {\n        const relay = num(p.relay, 0);\n        if (relay > 0) out.push({ topic: `INSERT INTO sensor_rules (gateway_id, stm_id, relay, enable, id_device, field, logic, onValue, offValue, cfgVersion, status, last_error) VALUES ('${esc(gw)}','${esc(stm)}',${relay},${num(p.enable,1)},'${esc(p.id_device || '')}','${esc(p.field || 'temperature')}','${esc(p.logic || 'ABOVE')}',${num(p.onValue,0)},${num(p.offValue,0)},${num(p.cfgVersion,1)},'active',NULL) ON DUPLICATE KEY UPDATE enable=VALUES(enable), id_device=VALUES(id_device), field=VALUES(field), logic=VALUES(logic), onValue=VALUES(onValue), offValue=VALUES(offValue), cfgVersion=VALUES(cfgVersion), status='active', last_error=NULL, updated_at=CURRENT_TIMESTAMP` });\n    }\n    if (cmd === 'SET_TIMER') {\n        const relay = num(p.relay, 0);\n        const saveSchedule = (s) => {\n            if (relay <= 0) return;\n            out.push({ topic: `INSERT INTO timer_rules (gateway_id, stm_id, relay, schedule_index, enable, on_time, off_time, cfgVersion, status, last_error) VALUES ('${esc(gw)}','${esc(stm)}',${relay},${num(s.index,1)},${num(s.enable,0)},'${esc(s.on || s.on_time || '00:00')}','${esc(s.off || s.off_time || '00:00')}',${num(p.cfgVersion,1)},'active',NULL) ON DUPLICATE KEY UPDATE enable=VALUES(enable), on_time=VALUES(on_time), off_time=VALUES(off_time), cfgVersion=VALUES(cfgVersion), status='active', last_error=NULL, updated_at=CURRENT_TIMESTAMP` });\n        };\n        if (Array.isArray(p.schedules)) {\n            for (const s of p.schedules) saveSchedule(s);\n        } else if (p.index !== undefined || p.on !== undefined || p.off !== undefined || p.on_time !== undefined || p.off_time !== undefined) {\n            saveSchedule({ index: p.index || p.schedule_index || 1, enable: p.enable || 0, on: p.on || p.on_time || '00:00', off: p.off || p.off_time || '00:00' });\n        }\n    }\n}\n\nif (type === 'FAN_STATE') {\n    out.push({ topic: `INSERT INTO gateway_configs (gateway_id, stm_id, fanMode, fanOnTemp, fanOffTemp) VALUES ('${esc(gw)}','${esc(stm)}',${num(p.fanMode,1)},${num(p.fanOnTemp,35)},${num(p.fanOffTemp,30)}) ON DUPLICATE KEY UPDATE fanMode=VALUES(fanMode), fanOnTemp=VALUES(fanOnTemp), fanOffTemp=VALUES(fanOffTemp), updated_at=CURRENT_TIMESTAMP` });\n}\n\nif (!out.length) return null;\nreturn [out];\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 1520,
+        "wires": [
+            [
+                "0a015d864fe5e39b"
+            ]
+        ]
+    },
+    {
+        "id": "0a015d864fe5e39b",
+        "type": "mysql",
+        "z": "37be37840d72424c",
+        "mydb": "mysql_config",
+        "name": "DB lưu STM state/config",
+        "x": 1070,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55d0b2f5ce56b56e",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL lấy cấu hình đồng bộ tủ",
+        "func": "const p = msg.payload || {};\nconst req = msg.req || {};\nfunction esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nconst gw = String(req.control_id || req.gateway_id || p.control_id || p.gateway_id || 'ESP79');\nmsg.req = { gateway_id: gw, control_id: gw, msg_id: p.msg_id || req.msg_id || '', localCfgVersion: p.localCfgVersion || 0 };\nmsg.topic = `SELECT gc.gateway_id, gc.stm_id, gc.cfgVersion, gc.mode, gc.fanMode, gc.fanOnTemp, gc.fanOffTemp, sr.relay AS sr_relay, sr.enable AS sr_enable, sr.id_device AS sr_device, sr.field AS sr_field, sr.logic AS sr_logic, sr.onValue AS sr_on, sr.offValue AS sr_off, tr.relay AS tr_relay, tr.schedule_index AS tr_index, tr.enable AS tr_enable, tr.on_time AS tr_on, tr.off_time AS tr_off FROM gateway_configs gc LEFT JOIN sensor_rules sr ON sr.gateway_id=gc.gateway_id AND sr.status='active' LEFT JOIN timer_rules tr ON tr.gateway_id=gc.gateway_id AND tr.status='active' WHERE gc.gateway_id='${esc(gw)}'`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1620,
+        "wires": [
+            [
+                "4dda7d1790de34c4"
+            ]
+        ]
+    },
+    {
+        "id": "4dda7d1790de34c4",
+        "type": "mysql",
+        "z": "37be37840d72424c",
+        "mydb": "mysql_config",
+        "name": "DB config sync",
+        "x": 1070,
+        "y": 1620,
+        "wires": [
+            [
+                "c36b2fdf10d299ce"
+            ]
+        ]
+    },
+    {
+        "id": "c36b2fdf10d299ce",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "JSON cấu hình đồng bộ -> tủ",
+        "func": "const req = msg.req || {};\nconst gw = req.control_id || req.gateway_id || 'ESP79';\nconst rows = Array.isArray(msg.payload) ? msg.payload : [];\nconst first = rows[0] || {};\nconst sensors = {};\nconst timers = {};\nfor (const r of rows) {\n    if (r.sr_relay) sensors[String(r.sr_relay)] = { relay: Number(r.sr_relay), enable: Number(r.sr_enable || 0), id_device: r.sr_device || '', field: r.sr_field || 'temperature', logic: r.sr_logic || 'ABOVE', onValue: Number(r.sr_on || 0), offValue: Number(r.sr_off || 0) };\n    if (r.tr_relay) {\n        const k = String(r.tr_relay);\n        if (!timers[k]) timers[k] = { relay: Number(r.tr_relay), schedules: [] };\n        const exists = timers[k].schedules.some(x => x.index === Number(r.tr_index));\n        if (!exists) timers[k].schedules.push({ index: Number(r.tr_index || 1), enable: Number(r.tr_enable || 0), on: r.tr_on || '00:00', off: r.tr_off || '00:00' });\n    }\n}\nconst payload = { msg_id: req.msg_id || ('NR_SYNC_' + Date.now()), type: 'CONFIG_SYNC_RESPONSE', gateway_id: gw, control_id: gw, status: 'OK', force: true, cfgVersion: Number(first.cfgVersion || 1), mode: first.mode || 'MANUAL', fanMode: Number(first.fanMode || 1), fanOnTemp: Number(first.fanOnTemp || 35), fanOffTemp: Number(first.fanOffTemp || 30), sensor_rules: Object.values(sensors), timer_rules: Object.values(timers) };\nconst mqttMsg = { topic: `maydokhongkhi/${gw}/stm32/config/sync/response`, payload };\nconst uiMsg = { topic: 'config_sync_response', payload };\nreturn [mqttMsg, uiMsg];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1310,
+        "y": 1620,
+        "wires": [
+            [
+                "4ce6498ae3b98c33"
+            ],
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "4ce6498ae3b98c33",
+        "type": "mqtt out",
+        "z": "37be37840d72424c",
+        "name": "Config sync -> ESP",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_config",
+        "x": 1550,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "9aed0fb966c626fd",
+        "type": "function",
+        "z": "37be37840d72424c",
+        "name": "SQL thêm khu vực",
+        "func": "const p = msg.payload || {};\nfunction esc(s) { return String(s ?? '').replace(/\\\\/g, '\\\\\\\\').replace(/'/g, \"\\\\'\"); }\nconst username = String(p.username || '').trim();\nconst areaName = String(p.area_name || p.ten_khu_vuc || p.name || '').trim();\nconst note = String(p.note || p.ghi_chu || '').trim();\nif (!username || !areaName) {\n    return [null, { _socketId: msg._socketId, topic: 'area_create_response', payload: { status: 'error', message: 'Thiếu tên đăng nhập hoặc tên khu vực.' } }];\n}\nmsg.socketId = msg._socketId;\nmsg.reqType = 'area_create';\nmsg.topic = `INSERT INTO areas (username, area_name, note) VALUES ('${esc(username)}','${esc(areaName)}','${esc(note)}') ON DUPLICATE KEY UPDATE note=VALUES(note), updated_at=CURRENT_TIMESTAMP`;\nreturn [msg, null];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1000,
+        "wires": [
+            [
+                "def79ce26cb0b9fa"
+            ],
+            [
+                "bb434d0c213b1f67"
+            ]
+        ]
+    },
+    {
+        "id": "60221c0a661f6a6e",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.5",
+            "node-red-node-mysql": "3.0.0",
+            "node-red-contrib-uibuilder": "7.5.0"
+        }
+    }
+]
