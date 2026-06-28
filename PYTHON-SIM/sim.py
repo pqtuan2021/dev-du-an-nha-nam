@@ -14,7 +14,7 @@ MQTT_KEEPALIVE = 60
 # 2 thiết bị cảm biến
 DEVICES = [
     {
-        "id_device": "SEN79001",
+        "id_device": "ZYIGOL2X26",
         "name": "Cảm biến khu A"
     },
     {

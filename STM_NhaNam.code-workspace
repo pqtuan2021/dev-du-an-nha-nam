@@ -9,6 +9,12 @@
 		},
 		{
 			"path": "PYTHON-SIM"
+		},
+		{
+			"path": "NodeRED"
+		},
+		{
+			"path": "src_json_ready"
 		}
 	],
 	"settings": {}
